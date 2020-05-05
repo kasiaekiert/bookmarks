@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mark.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @mark.url %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @mark.tag %>
+</p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @mark.domain_id %>
+</p>
+
+<%= link_to 'Edit', edit_mark_path(@mark) %> |
+<%= link_to 'Back', marks_path %>
