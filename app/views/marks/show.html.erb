@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong>Nazwa:</strong>
   <%= @mark.name %>
 </p>
 
@@ -16,7 +14,7 @@
 </p>
 
 <p>
-  <strong>Domain:</strong>
+  <strong>Domena:</strong>
   <% if @mark.domain %>
   <%= link_to @mark.domain.name, domain_path(@mark.domain) %>
   <% else %>
@@ -24,5 +22,5 @@
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_mark_path(@mark) %> |
-<%= link_to 'Back', marks_path %>
+<%= link_to 'Zmień', edit_mark_path(@mark) %> |
+<%= link_to '<- Powrót>', marks_path %>

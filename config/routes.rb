@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :domains
   resources :marks, path: 'links'
-  root to: 'marks#index'
+  root to: 'domains#index'
   
   get '/l/:uid', to: 'marks#redirect', as: 'redirect_link'
 

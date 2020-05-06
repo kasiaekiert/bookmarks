@@ -1,13 +1,11 @@
-<div>
-  <div class="container">
-  <%= mark.name %>
-  <%= mark.domain.name if mark.domain %>
-  <%= mark.url %>
-  <%= mark.tag %>
-  <%= link_to redirect_link_url(mark.uid), redirect_link_url(mark.uid) %>
-  <%= link_to 'Show', mark %>
-  <%= link_to 'Edit', edit_mark_path(mark) %>
-  <%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <br>
-  </div>
-</div>
+
+<tr>
+  <td><%= mark.name %></td>
+  <td><%= mark.domain.name if mark.domain %></td>
+  <td><%= mark.url %></td>
+  <td><%= mark.tag %></td>
+  <td><%= link_to redirect_link_url(mark.uid), redirect_link_url(mark.uid) %></td>
+  <td><%= link_to 'Show', mark %></td>
+  <td><%= link_to 'Edit', edit_mark_path(mark) %></td>
+  <td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

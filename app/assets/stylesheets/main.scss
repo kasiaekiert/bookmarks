@@ -1,0 +1,43 @@
+a.nav-link:hover,
+a.navbar-brand:hover {
+  background-color: #28a745;
+}
+
+.nav-link {
+  display: block;
+  padding: 1.25rem 1.25rem;
+  font-size: 14px;
+}
+
+.navbar {
+  margin-bottom: 22px;
+}
+
+.btn-newmark {
+  background-color: #28a745;
+  :hover {
+    background-color: #fff;
+  }
+}
+
+.btn-newmark {
+  display: inline-block;
+}
+
+.button-link {
+  margin-top: 20px;
+}
+
+.table {
+  margin-bottom: 0px !important;
+}
+
+a {
+  color: #28a745 !important;
+}
+
+a:hover {
+  background-color: #28a745 !important;
+  color: #fff !important;
+}
+

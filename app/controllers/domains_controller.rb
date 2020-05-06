@@ -10,6 +10,9 @@ class DomainsController < ApplicationController
   # GET /domains/1
   # GET /domains/1.json
   def show
+    # @domain = current_domain
+    
+    @marks = @domain.marks
   end
 
   # GET /domains/new

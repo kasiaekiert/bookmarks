@@ -1,13 +1,26 @@
-<p id="notice"><%= notice %></p>
-<%= link_to 'New Mark', new_mark_path %>
+<div class="button-link">
+  <%= link_to 'Nowa Zakładka', new_mark_path, :class=> "btn float-right btn-outline-success btn-newmark" %>
+</div>
 
-
-<h1>Marks</h1>
+<div class="title-marks">
+  <h1>Zakładki</h1>
+</div>
 <div id="content">
-  <%= render(partial: 'mark', collection: @marks) %>
-</div><p id="notice"><%= notice %></p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">First</th>
+        <th scope="col">Link:</th>
+        <th scope="col">URL:</th>
+        <th scope="col">Tagi:</th>
+        <th scope="col" colspan=4>Krótki URL:</th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= render(partial: 'mark', collection: @marks) %>
+    </tbody>
+  </table>
 
-<h1>Marks</h1>
 <% unless @marks.current_page == @marks.total_pages %>
   <p id="view-more">
     <%= link_to('Zaladuj wiecej', url_for(page: @marks.current_page + 1), remote: true) %>
