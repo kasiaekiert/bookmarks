@@ -1,6 +1,5 @@
 class MarksController < ApplicationController
   before_action :set_mark, only: [:show, :edit, :update, :destroy]
-
   # GET /marks
   # GET /marks.json
   def index
@@ -49,6 +48,9 @@ class MarksController < ApplicationController
         format.json { render json: @mark.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def redirect
   end
 
   # DELETE /marks/1
