@@ -5,7 +5,7 @@
   <td><%= mark.url %></td>
   <td><%= mark.tag %></td>
   <td><%= link_to redirect_link_url(mark.uid), redirect_link_url(mark.uid) %></td>
-  <td><%= link_to 'Show', mark %></td>
-  <td><%= link_to 'Edit', edit_mark_path(mark) %></td>
-  <td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to 'Zobacz więcej', mark %></td>
+  <td><%= link_to 'Popraw', edit_mark_path(mark) %></td>
+  <td><%= link_to 'Usuń', mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>

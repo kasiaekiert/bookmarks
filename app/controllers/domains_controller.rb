@@ -7,25 +7,22 @@ class DomainsController < ApplicationController
     @domains = Domain.all
   end
 
-  # GET /domains/1
-  # GET /domains/1.json
   def show
-    # @domain = current_domain
-    
-    @marks = @domain.marks
+    collection = @domain.marks
+    if params['search']
+      search_for = "%#{params['search']}%"
+      collection = collection.joins(:domain).where('domains.name LIKE ? OR marks.name LIKE ? OR marks.url LIKE ? OR marks.tag LIKE ?', search_for, search_for, search_for, search_for) 
+    end 
+    @marks = collection.page(params[:page]).per(30)
   end
 
-  # GET /domains/new
   def new
     @domain = Domain.new
   end
 
-  # GET /domains/1/edit
   def edit
   end
 
-  # POST /domains
-  # POST /domains.json
   def create
     @domain = Domain.new(domain_params)
 

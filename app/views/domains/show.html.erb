@@ -1,15 +1,12 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong>Nazwa domeny:</strong>
   <%= @domain.name %>
 </p>
 <p>
-  <strong>Marks:</strong>
+  <strong>Zakładki:</strong>
   <% @domain.marks.each do |mark| %>
     <%= mark.name %>
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_domain_path(@domain) %> |
-<%= link_to 'Back', domains_path %>
+<%= link_to 'Wróć', domains_path %>
