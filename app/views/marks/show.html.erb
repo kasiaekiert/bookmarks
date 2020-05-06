@@ -17,7 +17,11 @@
 
 <p>
   <strong>Domain:</strong>
-  <%= @mark.domain_id %>
+  <% if @mark.domain %>
+  <%= link_to @mark.domain.name, domain_path(@mark.domain) %>
+  <% else %>
+    <%= @mark.domain_id %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_mark_path(@mark) %> |

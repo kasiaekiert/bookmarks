@@ -4,6 +4,7 @@
   <%= mark.domain.name if mark.domain %>
   <%= mark.url %>
   <%= mark.tag %>
+  <%= link_to redirect_link_url(mark.uid), redirect_link_url(mark.uid) %>
   <%= link_to 'Show', mark %>
   <%= link_to 'Edit', edit_mark_path(mark) %>
   <%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' } %>

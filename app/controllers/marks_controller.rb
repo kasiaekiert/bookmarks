@@ -3,7 +3,12 @@ class MarksController < ApplicationController
   # GET /marks
   # GET /marks.json
   def index
-    @marks = Mark.page(params[:page]).per(30)
+    collection = Mark.all
+    if params['search']
+      search_for = "%#{params['search']}%"
+      collection = collection.joins(:domain).where('domains.name LIKE ? OR marks.name LIKE ? OR marks.url LIKE ? OR marks.tag LIKE ?', search_for, search_for, search_for, search_for) 
+    end 
+    @marks = collection.page(params[:page]).per(30)
   end
 
   # GET /marks/1
@@ -51,6 +56,8 @@ class MarksController < ApplicationController
   end
 
   def redirect
+    @mark = Mark.find_by(uid: params[:uid])
+    redirect_to @mark.url
   end
 
   # DELETE /marks/1

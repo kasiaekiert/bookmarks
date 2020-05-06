@@ -4,16 +4,15 @@ $(function () {
   viewMore = $('#view-more');
   isLoadingNextPage = false;
   lastLoadAt = null;
-  minTimeBetweenPages = 5000;
-  loadNextPageAt = 50;
+  minTimeBetweenPages = 2000;
+  loadNextPageAt = 150;
   waitedLongEnoughBetweenPages = function () {
     return lastLoadAt === null || new Date() - lastLoadAt > minTimeBetweenPages;
   };
   approachingBottomOfPage = function () {
-    console.log('offsetHeight', document.body.offsetHeight - loadNextPageAt)
-    console.log(document.documentElement.clientHeight + $(document).scrollTop())
-    console.log('scrollTop', $(document).scrollTop())
-    return document.documentElement.clientHeight + $(document).scrollTop() < document.body.offsetHeight - loadNextPageAt;
+    console.log('document.documentElement.clientHeight + $(document).scrollTop()', document.documentElement.clientHeight + $(document).scrollTop())
+    console.log('document.body.offsetHeight - loadNextPageAt', document.body.offsetHeight - loadNextPageAt)
+    return document.documentElement.clientHeight + $(document).scrollTop() > document.body.offsetHeight - loadNextPageAt;
   };
   nextPage = function () {
     var url;
@@ -37,6 +36,7 @@ $(function () {
   };
   $(window).scroll(function () {
     if (approachingBottomOfPage() && waitedLongEnoughBetweenPages()) {
+      console.log('LOADING!!!!!!!!!!!!!!!!!!!!!!!')
       return nextPage();
     }
   });
