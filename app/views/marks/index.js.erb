@@ -1,0 +1,7 @@
+$('#content').append("<%=j render(partial: 'mark', collection: @marks, format: 'html') %>");
+
+<% if @marks.current_page == @marks.total_pages %>
+  $('#view-more').remove();
+<% else %>
+  $('#view-more a').attr('href', '<%= url_for(page: @marks.current_page + 1) %>');
+<% end %>

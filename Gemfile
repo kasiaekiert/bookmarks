@@ -32,6 +32,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'jquery-rails'
 gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
+gem 'kaminari'
+gem 'faker', '~> 1.6', '>= 1.6.6'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -3,7 +3,7 @@ class MarksController < ApplicationController
   # GET /marks
   # GET /marks.json
   def index
-    @marks = Mark.all
+    @marks = Mark.page(params[:page]).per(30)
   end
 
   # GET /marks/1

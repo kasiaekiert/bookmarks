@@ -6,7 +6,7 @@ class Mark < ApplicationRecord
   validates :url, url: true, presence: true
   validates :tag, presence: true
 
-  after_create :assign_domain, :url_abbrev
+  after_create :assign_domain
 
   def assign_domain
     domain_name = URI.parse(url.to_s).host
