@@ -1,0 +1,12 @@
+<% @domain.marks.each do |mark| %>
+  <tr>
+    <td><%= mark.name %></td>
+    <td><%= mark.domain.name if mark.domain %></td>
+    <td><%= mark.url %></td>
+    <td><%= mark.tag %></td>
+    <td><%= link_to redirect_link_url(mark.uid), redirect_link_url(mark.uid) %></td>
+    <td><%= link_to 'Zobacz więcej', mark %></td>
+    <td><%= link_to 'Popraw', edit_mark_path(mark) %></td>
+    <td><%= link_to 'Usuń', mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>

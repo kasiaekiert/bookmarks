@@ -1,4 +1,4 @@
-$('#content').append("<%=j render(partial: 'mark', collection: @marks, format: 'html') %>");
+$('#content table tbody').append("<%=j render(partial: 'mark', collection: @marks, format: 'html') %>");
 
 <% if @marks.current_page == @marks.total_pages %>
   $('#view-more').remove();

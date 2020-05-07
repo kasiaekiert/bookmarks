@@ -2,11 +2,20 @@
   <strong>Nazwa domeny:</strong>
   <%= @domain.name %>
 </p>
-<p>
-  <strong>Zakładki:</strong>
-  <% @domain.marks.each do |mark| %>
-    <%= mark.name %>
-  <% end %>
-</p>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">First</th>
+        <th scope="col">Link:</th>
+        <th scope="col">URL:</th>
+        <th scope="col">Tagi:</th>
+        <th scope="col" colspan=4>Krótki URL:</th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= render(partial: 'marks_in_domain', collection: @domain.marks) %>
+    </tbody>
+  </table>
+
 
 <%= link_to 'Wróć', domains_path %>
