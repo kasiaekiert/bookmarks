@@ -10,8 +10,6 @@ $(function () {
     return lastLoadAt === null || new Date() - lastLoadAt > minTimeBetweenPages;
   };
   approachingBottomOfPage = function () {
-    console.log('document.documentElement.clientHeight + $(document).scrollTop()', document.documentElement.clientHeight + $(document).scrollTop())
-    console.log('document.body.offsetHeight - loadNextPageAt', document.body.offsetHeight - loadNextPageAt)
     return document.documentElement.clientHeight + $(document).scrollTop() > document.body.offsetHeight - loadNextPageAt;
   };
   nextPage = function () {
@@ -36,7 +34,6 @@ $(function () {
   };
   $(window).scroll(function () {
     if (approachingBottomOfPage() && waitedLongEnoughBetweenPages()) {
-      console.log('LOADING!!!!!!!!!!!!!!!!!!!!!!!')
       return nextPage();
     }
   });
